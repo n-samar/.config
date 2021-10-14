@@ -5,6 +5,11 @@ filetype plugin indent on     " required
 nnoremap : ;
 nnoremap ; :
 
+" turn hybrid line numbers on
+:set number relativenumber
+:set nu rnu
+
+
 " remap buffer navigation
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -40,7 +45,6 @@ Plugin 'junegunn/fzf'       " Fuzzy finder
 Plugin 'junegunn/fzf.vim'
 Plugin 'voldikss/vim-floaterm' " Vim floating terminal
 Plugin 'VimCompletesMe'  " vim autocomplete
-Plugin 'vim-syntastic/syntastic'
 Plugin 'mileszs/ack.vim'
 
 " All of your Plugins must be added before the following line
@@ -70,19 +74,6 @@ set autochdir
 
 " Toggle floating terminal window
 let g:floaterm_keymap_toggle = '<Leader>t'
-
-" syntastic recommended settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_quiet_messages = { 'regex': 'structured bindings' }
-let g:syntastic_python_checker = ['python']
-let g:syntastic_python_python_exec = 'python3'
 
 " keybindings for switching between buffers
 nnoremap <C-o> :bn<CR>
