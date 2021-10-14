@@ -1,6 +1,10 @@
 set nocompatible              " be iMproved, required
 filetype plugin indent on     " required
 
+" remap : to ; and vis versa
+nnoremap : ;
+nnoremap ; :
+
 " remap buffer navigation
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
