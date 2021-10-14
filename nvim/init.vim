@@ -1,6 +1,12 @@
 set nocompatible              " be iMproved, required
 filetype plugin indent on     " required
 
+" remap buffer navigation
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
 " disable arrow keys
 noremap  <Up> ""
 noremap! <Up> <Esc>
