@@ -10,7 +10,7 @@ nnoremap ; :
 :set nu rnu
 
 " tabs are spaces
-"set expandtab
+:set expandtab
 
 " remap buffer navigation
 noremap <C-h> <C-w>h
