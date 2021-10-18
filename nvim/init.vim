@@ -9,6 +9,8 @@ nnoremap ; :
 :set number relativenumber
 :set nu rnu
 
+" tabs are spaces
+"set expandtab
 
 " remap buffer navigation
 noremap <C-h> <C-w>h
