@@ -11,6 +11,7 @@ nnoremap ; :
 
 " ignore case
 :set ignorecase
+:set infercase " used so ignorecase interacts well with autocompletion
 
 " tabs are spaces
 :set expandtab
