@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+set nocompatible              
 filetype plugin indent on     " required
 
 " remap : to ; and vis versa
@@ -8,6 +8,9 @@ nnoremap ; :
 " turn hybrid line numbers on
 :set number relativenumber
 :set nu rnu
+
+" ignore case
+:set ignorecase
 
 " tabs are spaces
 :set expandtab
