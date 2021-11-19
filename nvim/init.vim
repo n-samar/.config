@@ -52,10 +52,15 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'voldikss/vim-floaterm' " Vim floating terminal
 Plugin 'VimCompletesMe'  " vim autocomplete
 Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+filetype plugin on
+
+" Enable matchit plugin
+runtime macros/matchit.vim
 
 syntax on
 set colorcolumn=80
