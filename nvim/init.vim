@@ -10,6 +10,7 @@ nnoremap ; :
 :set nu rnu
 
 " ignore case
+:set ignorecase
 :set smartcase
 :set infercase " used so ignorecase interacts well with autocompletion
 
