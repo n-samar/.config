@@ -111,3 +111,6 @@ autocmd FileType bsv set textwidth=100
 let b:verilog_indent_modules = 1
 
 autocmd Filetype tex        set nosmartindent
+
+" remap :noh
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
