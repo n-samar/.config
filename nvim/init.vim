@@ -113,8 +113,5 @@ let b:verilog_indent_modules = 1
 
 autocmd Filetype tex        set nosmartindent
 
-" remap :noh
-nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-
 " automatically regenerate ctags index on every file save
 :autocmd BufWritePost * call system("ctags -R")
