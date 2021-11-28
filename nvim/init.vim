@@ -1,4 +1,4 @@
-set nocompatible              
+set nocompatible
 filetype plugin indent on     " required
 
 " remap : to ; and vis versa
@@ -16,6 +16,15 @@ nnoremap ; :
 
 " tabs are spaces
 :set expandtab
+
+" highlight redundant whitespace and all tabs
+highlight ExtraWhitespace ctermbg=red guibg=red
+:autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
+:autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+:autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+:autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+:autocmd BufWinLeave * call clearmatches()
 
 " remap buffer navigation
 noremap <C-h> <C-w>h
