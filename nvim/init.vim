@@ -57,12 +57,11 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy search, file opening
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'preservim/nerdtree' " File search
-Plugin 'junegunn/fzf'       " Fuzzy finder
-Plugin 'junegunn/fzf.vim'
 Plugin 'voldikss/vim-floaterm' " Vim floating terminal
 Plugin 'VimCompletesMe'  " vim autocomplete
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'rhysd/vim-clang-format'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -124,3 +123,6 @@ autocmd Filetype tex        set nosmartindent
 
 " automatically regenerate ctags index on every file save
 :autocmd BufWritePost * call system("ctags -R")
+
+" auto clang-format .c, .h, .cpp, and .hpp files on each buffer write
+autocmd FileType c,h,cpp,hpp ClangFormatAutoEnable
