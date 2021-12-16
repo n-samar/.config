@@ -121,8 +121,5 @@ let b:verilog_indent_modules = 1
 
 autocmd Filetype tex        set nosmartindent
 
-" automatically regenerate ctags index on every file save
-:autocmd BufWritePost * call system("ctags -R")
-
 " auto clang-format .c, .h, .cpp, and .hpp files on each buffer write
 autocmd FileType c,h,cpp,hpp ClangFormatAutoEnable
