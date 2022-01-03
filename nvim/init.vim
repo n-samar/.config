@@ -41,6 +41,7 @@ noremap  <Left> ""
 noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
+noremap <Esc> ""
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -53,15 +54,18 @@ Plugin 'mtikekar/vim-bsv'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'   " status bar
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy search, file opening
-Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'preservim/nerdtree' " File search
 Plugin 'voldikss/vim-floaterm' " Vim floating terminal
 Plugin 'VimCompletesMe'  " vim autocomplete
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'sickill/vim-pasta'
+Plugin 'tpope/vim-unimpaired'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -74,14 +78,15 @@ runtime macros/matchit.vim
 syntax on
 set colorcolumn=80
 
-" Enable mouse in all modes
-set mouse=a
-
 " allows <Esc> to transition terminal->normal mode
 tnoremap <Esc> <C-\><C-n>
 
+let g:solarized_visibility = "high"
+let g:solarized_termcolors=16
+let g:solarized_contrast = "high"
+syntax enable
 set background=dark
-colorscheme PaperColor
+colorscheme solarized
 
 let NERDSpaceDelims=1
 
@@ -90,10 +95,9 @@ set shiftwidth=4
 set encoding=utf-8
 set autoindent
 set number
-set autochdir
 
 " Toggle floating terminal window
-let g:floaterm_keymap_toggle = '<Leader>t'
+let g:floaterm_keymap_toggle = '<C-s>'
 
 " keybindings for switching between buffers
 nnoremap <C-o> :bn<CR>
@@ -123,3 +127,7 @@ autocmd Filetype tex        set nosmartindent
 
 " auto clang-format .c, .h, .cpp, and .hpp files on each buffer write
 autocmd FileType c,h,cpp,hpp ClangFormatAutoEnable
+
+" set :make to run scons
+set makeprg=/data/sanchez/users/nsamar/bin/scons
+
