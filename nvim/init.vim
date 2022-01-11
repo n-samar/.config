@@ -127,6 +127,7 @@ autocmd Filetype tex        set nosmartindent
 
 " auto clang-format .c, .h, .cpp, and .hpp files on each buffer write
 autocmd FileType c,h,cpp,hpp ClangFormatAutoEnable
+let g:clang_format#enable_fallback_style = 0
 
 " set :make to run scons
 set makeprg=/data/sanchez/users/nsamar/bin/scons
