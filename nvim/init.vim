@@ -131,13 +131,3 @@ let g:clang_format#enable_fallback_style = 0
 
 " set :make to run scons
 set makeprg=/data/sanchez/users/nsamar/bin/scons
-
-" map file openning commands
-" hgmnz's answer to https://stackoverflow.com/questions/1708623/opening-files-in-the-same-folder-as-the-current-file-in-vim
-" ,e allows you to open a file in the same working directory as the file in
-" the current buffer.
-" ,t does the same but in a new tab
-" ,s does the same but in a split window
-map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
-map ,t :tabe <C-R>=expand("%:p:h") . "/" <CR>
-map ,s :split <C-R>=expand("%:p:h") . "/" <CR>
