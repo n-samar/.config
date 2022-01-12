@@ -57,7 +57,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy search, file opening
-Plugin 'preservim/nerdtree' " File search
 Plugin 'voldikss/vim-floaterm' " Vim floating terminal
 Plugin 'VimCompletesMe'  " vim autocomplete
 Plugin 'mileszs/ack.vim'
@@ -88,7 +87,6 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-let NERDSpaceDelims=1
 
 set tabstop=4
 set shiftwidth=4
