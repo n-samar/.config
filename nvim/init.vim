@@ -123,8 +123,8 @@ let b:verilog_indent_modules = 1
 
 autocmd Filetype tex        set nosmartindent
 
-" auto clang-format .c, .h, .cpp, and .hpp files on each buffer write
-autocmd FileType c,h,cpp,hpp ClangFormatAutoEnable
+" auto clang-format .c, .h, .cpp, .cc, and .hpp files on each buffer write
+autocmd FileType c,h,cpp,hpp,cc ClangFormatAutoEnable
 let g:clang_format#enable_fallback_style = 0
 
 " set :make to run scons
