@@ -129,3 +129,7 @@ let g:clang_format#enable_fallback_style = 0
 
 " set :make to run scons
 set makeprg=/data/sanchez/users/nsamar/bin/scons
+
+" don't allow netrw to use the clipboard (otherwise netrw performance over SSH
+" is terrible
+let g:netrw_clipboard = 0
