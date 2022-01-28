@@ -44,7 +44,8 @@ noremap! <Right> <Esc>
 noremap <Esc> ""
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/data/sanchez/users/nsamar/.vim/bundle/Vundle.vim
+call vundle#rc("/data/sanchez/users/nsamar/.vim/bundle")
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -130,6 +131,5 @@ let g:clang_format#enable_fallback_style = 0
 " set :make to run scons
 set makeprg=/data/sanchez/users/nsamar/bin/scons
 
-" don't allow netrw to use the clipboard (otherwise netrw performance over SSH
-" is terrible
-let g:netrw_clipboard = 0
+" change swap file location
+:set directory=/data/sanchez/users/nsamar/.config/nvim/swapfiles/
