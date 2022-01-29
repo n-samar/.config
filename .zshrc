@@ -117,3 +117,10 @@ export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
 
 export XDG_CONFIG_HOME=/data/sanchez/users/nsamar/.config
 export XDG_DATA_HOME=/data/sanchez/users/nsamar/.local/share
+
+# instatiate the main session if it doesn't exist, or attach to it if it exists
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux new-session -A -s main
+fi
+
+cdz
