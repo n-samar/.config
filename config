@@ -1,0 +1,23 @@
+Host jump.csail.mit.edu
+    GSSAPIAuthentication yes
+    VerifyHostKeyDNS yes
+    ForwardAgent yes
+    User nsamar
+
+Host *.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
+    # Enable passwordless SSH between CSAIL machines
+    ProxyJump jump.csail.mit.edu
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+    ForwardAgent yes
+    #GSSAPIKeyExchange yes
+    #GSSAPITrustDNS yes
+
+    # CSAIL Kerberos username
+    User nsamar
+
+# Without relying on system DNS resolver, expand these CSAIL hostnames to FQDNs
+Host z login nsamar slm1 bcn? mad? mad?? draco? draco?? swarm? fosnode? fosnode?? blb?
+    CanonicalizeHostname always
+    CanonicalizeFallbackLocal no
+    CanonicalDomains csail.mit.edu
