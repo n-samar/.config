@@ -85,7 +85,7 @@ let g:solarized_visibility = "high"
 let g:solarized_termcolors=16
 let g:solarized_contrast = "high"
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 
 
@@ -118,9 +118,6 @@ nnoremap <C-q> :hide<CR>
 autocmd BufNewFile,BufRead *.bsv set ft=bsv
 autocmd BufNewFile,BufRead *.ms  set ft=bsv
 
-"Minispec
-autocmd FileType bsv set textwidth=100
-let b:verilog_indent_modules = 1
 
 autocmd Filetype tex        set nosmartindent
 
@@ -129,7 +126,11 @@ autocmd FileType c,h,cpp,hpp,cc ClangFormatAutoEnable
 let g:clang_format#enable_fallback_style = 0
 
 " set :make to run scons
-set makeprg=/data/sanchez/users/nsamar/bin/scons
+set makeprg=/data/sanchez/users/nsamar/bin/scons\ -j16
 
 " change swap file location
 :set directory=/data/sanchez/users/nsamar/.config/nvim/swapfiles/
+
+"Minispec
+autocmd FileType bsv set textwidth=100
+let b:verilog_indent_modules = 1

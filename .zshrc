@@ -107,9 +107,17 @@ source /data/sanchez/tools/gcc-8.2/paths.sh
 source /data/sanchez/tools/nsamar/18.04/paths-vagrant.sh
 
 export PATH=$PATH:~/.local/bin/
+
+# Point to new bsc 2022.01
+DISTRO=$(lsb_release -irs | sed "s/\.//g" | tr -d '\n' | tr '[:upper:]' '[:lower:]') 
+export PATH=/data/sanchez/tools/bluespec/$DISTRO/bsc-latest/bin:$PATH
+
+
+
 alias scons="/data/sanchez/users/nsamar/bin/scons"
 alias cdj="cd /data/sanchez/users/nsamar/janncy"
 alias cdz="cd /data/sanchez/users/nsamar/"
+alias cdf="cd /data/sanchez/users/nsamar/functional-units"
 
 compinit -d /data/sanchez/users/nsamar/zsh/.zcompdump
 
@@ -117,6 +125,7 @@ export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
 
 export XDG_CONFIG_HOME=/data/sanchez/users/nsamar/.config
 export XDG_DATA_HOME=/data/sanchez/users/nsamar/.local/share
+
 
 # instatiate the main session if it doesn't exist, or attach to it if it exists
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
