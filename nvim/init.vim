@@ -5,10 +5,6 @@ filetype plugin indent on     " required
 nnoremap : ;
 nnoremap ; :
 
-" turn hybrid line numbers on
-:set number relativenumber
-:set nu rnu
-
 " ignore case
 :set ignorecase
 :set smartcase
