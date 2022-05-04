@@ -66,6 +66,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'sickill/vim-pasta'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'neoclide/coc.nvim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
