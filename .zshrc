@@ -6,7 +6,6 @@
 plugins=()
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/afs/csail.mit.edu/u/n/nsamar/.oh-my-zsh"
@@ -100,36 +99,38 @@ export ZSH="/afs/csail.mit.edu/u/n/nsamar/.oh-my-zsh"
 
 # nikola's edits
 
-PROMPT='%m:%C> '
-export PATH="/data/sanchez/tools/gcc-8.2/bin:/usr/local/csail/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/afs/athena.mit.edu/course/6/6.004/yosys/bin:/snap/bin:/data/sanchez/tools/qmn/18.04/bsc-vagrant/bin:/data/sanchez/tools/nsamar/18.04/minispec/synth:/afs/athena.mit.edu/course/6/6.004/yosys/bin:/data/sanchez/tools/nsamar/18.04/minispec:/data/sanchez/tools/qmn/18.04/bsc-vagrant/bin:/data/sanchez/tools/nsamar/18.04:/data/sanchez/tools/qmn/18.04/bsc-vagrant/bin:/data/sanchez/tools/nsamar/18.04/minispec/synth:/afs/athena.mit.edu/course/6/6.004/yosys/bin:/data/sanchez/tools/nsamar/18.04/minispec"
+# Point to new bsc 2022.01
+DISTRO=$(lsb_release -irs | sed "s/\.//g" | tr -d '\n' | tr '[:upper:]' '[:lower:]')
 
-source /data/sanchez/tools/gcc-8.2/paths.sh
+export PATH="/data/sanchez/tools/bluespec/$DISTRO/bsc-latest/bin:/usr/local/csail/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/afs/athena.mit.edu/course/6/6.004/yosys/bin:/snap/bin:/data/sanchez/tools/qmn/18.04/bsc-vagrant/bin:/data/sanchez/tools/nsamar/18.04/minispec/synth:/afs/athena.mit.edu/course/6/6.004/yosys/bin:/data/sanchez/tools/nsamar/18.04/minispec:/data/sanchez/tools/qmn/18.04/bsc-vagrant/bin:/data/sanchez/tools/nsamar/18.04:/data/sanchez/tools/qmn/18.04/bsc-vagrant/bin:/data/sanchez/tools/nsamar/18.04/minispec/synth:/afs/athena.mit.edu/course/6/6.004/yosys/bin:/data/sanchez/tools/nsamar/18.04/minispec:~/.local/bin/"
+
+PROMPT='%m:%C> '
+
+export PATH="$HOME/bin:/usr/local/bin:$PATH:/usr/go/bin"
+
+# source /data/sanchez/tools/gcc-8.2/paths.sh
 source /data/sanchez/tools/nsamar/18.04/paths-vagrant.sh
 
-export PATH=$PATH:~/.local/bin/
-
-# Point to new bsc 2022.01
-DISTRO=$(lsb_release -irs | sed "s/\.//g" | tr -d '\n' | tr '[:upper:]' '[:lower:]') 
-export PATH=/data/sanchez/tools/bluespec/$DISTRO/bsc-latest/bin:$PATH
-
-
-
 alias scons="/data/sanchez/users/nsamar/bin/scons"
-alias cdj="cd /data/sanchez/users/nsamar/janncy"
+alias cdj="cd /scratch/nsamar/janncy"
+alias cdi="cd /data/sanchez/users/nsamar/isca22_fhe"
 alias cdz="cd /data/sanchez/users/nsamar/"
-alias cdf="cd /data/sanchez/users/nsamar/functional-units"
+alias cdf="cd /data/sanchez/users/nsamar/janncy/fhestina"
+alias cdn="cd /data/sanchez/users/nsamar/nsf-crypto-accel"
+alias cde="cd /gash/external-mem"
+alias t="tmux new-session -A -s main"
+alias python=python3
 
 compinit -d /data/sanchez/users/nsamar/zsh/.zcompdump
 
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
 
 export XDG_CONFIG_HOME=/data/sanchez/users/nsamar/.config
 export XDG_DATA_HOME=/data/sanchez/users/nsamar/.local/share
 
+export LIBCONFIGPATH=/data/sanchez/tools/axelf/libconfig-1.7.2/inst
+export ASAN_OPTIONS=halt_on_error=0
 
-# instatiate the main session if it doesn't exist, or attach to it if it exists
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux new-session -A -s main
-fi
+source /afs/csail.mit.edu/system/common/etc/zsh/zprofile.csail
 
 cdz
