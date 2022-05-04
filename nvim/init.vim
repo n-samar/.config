@@ -43,35 +43,27 @@ noremap  <Right> ""
 noremap! <Right> <Esc>
 noremap <Esc> ""
 
-" set the runtime path to include Vundle and initialize
-set rtp+=/data/sanchez/users/nsamar/.vim/bundle/Vundle.vim
-call vundle#rc("/data/sanchez/users/nsamar/.vim/bundle")
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('/data/sanchez/users/nsamar/.config/nvim/plugged')
+" Plugins go here
 
-" let Vundle manage Vundle, required
-Plugin 'mtikekar/vim-bsv'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'   " status bar
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'ctrlpvim/ctrlp.vim' " Fuzzy search, file opening
-Plugin 'voldikss/vim-floaterm' " Vim floating terminal
-Plugin 'VimCompletesMe'  " vim autocomplete
-Plugin 'mileszs/ack.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'sickill/vim-pasta'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'neoclide/coc.nvim'
+Plug 'mtikekar/vim-bsv'
+Plug 'VundleVim/Vundle.vim'
+Plug 'vim-airline/vim-airline'   " status bar
+Plug 'vim-airline/vim-airline-themes'
+Plug 'altercation/vim-colors-solarized'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ctrlpvim/ctrlp.vim' " Fuzzy search, file opening
+Plug 'voldikss/vim-floaterm' " Vim floating terminal
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'rhysd/vim-clang-format'
+Plug 'sickill/vim-pasta'
+Plug 'tpope/vim-unimpaired'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-filetype plugin on
+call plug#end()
 
 " Enable matchit plugin
 runtime macros/matchit.vim
