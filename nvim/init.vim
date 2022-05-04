@@ -61,6 +61,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-unimpaired'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " All of your Plugins must be added before the following line
 call plug#end()
