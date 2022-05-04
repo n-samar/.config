@@ -133,4 +133,7 @@ export ASAN_OPTIONS=halt_on_error=0
 
 source /afs/csail.mit.edu/system/common/etc/zsh/zprofile.csail
 
+# Move GOPATH outside of AFS $HOME hell AND NFS filelock hell
+export GOPATH=/scratch/nsamar/go
+
 cdz

@@ -57,6 +57,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-unimpaired'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call plug#end()
@@ -122,3 +123,21 @@ set makeprg=/data/sanchez/users/nsamar/bin/scons\ -j16
 "Minispec
 autocmd FileType bsv set textwidth=100
 let b:verilog_indent_modules = 1
+
+" CoC autocompletion
+
+" Use <cr> for completion
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use <cr> to select the first completion when no item is selected
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
+" Use <Tab> and <S-Tab> to navigate completion list
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" CoC code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
