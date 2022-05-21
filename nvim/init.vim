@@ -58,6 +58,7 @@ Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-unimpaired'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go'
+Plug 'lervag/vimtex'
 
 " All of your Plugins must be added before the following line
 call plug#end()
@@ -74,7 +75,7 @@ let g:solarized_visibility = "high"
 let g:solarized_termcolors=16
 let g:solarized_contrast = "high"
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 
 
