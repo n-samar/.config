@@ -112,37 +112,43 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH:/usr/go/bin"
 # source /data/sanchez/tools/gcc-8.2/paths.sh
 source /data/sanchez/tools/nsamar/18.04/paths-vagrant.sh
 
-alias scons="/data/sanchez/users/nsamar/bin/scons"
 alias cdj="cd /data/scratch/nsamar/janncy"
 alias cdi="cd /data/sanchez/users/nsamar/isca22_fhe"
 alias cdz="cd /data/sanchez/users/nsamar/"
 alias cdf="cd /data/sanchez/users/nsamar/janncy/fhestina"
 alias cdn="cd /data/sanchez/users/nsamar/nsf-crypto-accel"
 alias cdt="cd /data/sanchez/users/nsamar/ms_nsamar"
+alias cds="cd /data/scratch/nsamar"
 
 alias t="tmux new-session -A -s main"
 
 compinit -d /data/sanchez/users/nsamar/zsh/.zcompdump
 
-export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
-
-export XDG_CONFIG_HOME=/data/sanchez/users/nsamar/.config
+# export XDG_CONFIG_HOME=/data/sanchez/users/nsamar/.config
 # export XDG_DATA_HOME=/data/sanchez/users/nsamar/.local/share
-export XDG_DATA_HOME=/data/scratch/nsamar/.local/share
+# export XDG_DATA_HOME=/data/scratch/nsamar/.local/share
 
 export LIBCONFIGPATH=/data/sanchez/tools/axelf/libconfig-1.7.2/inst
-export ASAN_OPTIONS=halt_on_error=0
 
 source /afs/csail.mit.edu/system/common/etc/zsh/zprofile.csail
 
 # Move GOPATH outside of AFS $HOME hell AND NFS filelock hell
 export GOPATH=/scratch/nsamar/go
-export XDG_CACHE_HOME=$HOME/.cache
+# export XDG_CACHE_HOME=$HOME/.cache
 
 export PATH="/data/scratch/nsamar/.local/bin:$PATH"
-export PYTHONPATH="/data/scratch/nsamar/.local/lib/python3.8/site-packages:$PATH"
+alias l="ssh nsamardzic@txe1-login.mit.edu"
+
+source /data/sanchez/tools/janncy/jenv/bin/activate
+
+if [ -n "$VIRTUAL_ENV" ]; then
+    source "$VIRTUAL_ENV/bin/activate"
+fi
 
 HISTSIZE=1000
 HISTFILESIZE=2000
 
 cdz
+
+set -o vi
+export EDITOR=nvim
