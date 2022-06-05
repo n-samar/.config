@@ -152,3 +152,4 @@ cdz
 
 set -o vi
 export EDITOR=nvim
+bindkey '       ' autosuggest-accept
