@@ -11,6 +11,7 @@ plugins=()
 # Path to your oh-my-zsh installation.
 export ZSH="/afs/csail.mit.edu/u/n/nsamar/.oh-my-zsh"
 
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -103,15 +104,14 @@ export ZSH="/afs/csail.mit.edu/u/n/nsamar/.oh-my-zsh"
 # Point to new bsc 2022.01
 DISTRO=$(lsb_release -irs | sed "s/\.//g" | tr -d '\n' | tr '[:upper:]' '[:lower:]')
 
-export PATH="/data/sanchez/tools/bluespec/$DISTRO/bsc-latest/bin:/usr/local/csail/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/afs/athena.mit.edu/course/6/6.004/yosys/bin:/snap/bin:/data/sanchez/tools/qmn/18.04/bsc-vagrant/bin:/data/sanchez/tools/nsamar/18.04/minispec/synth:/afs/athena.mit.edu/course/6/6.004/yosys/bin:/data/sanchez/tools/nsamar/18.04/minispec:/data/sanchez/tools/qmn/18.04/bsc-vagrant/bin:/data/sanchez/tools/nsamar/18.04:/data/sanchez/tools/qmn/18.04/bsc-vagrant/bin:/data/sanchez/tools/nsamar/18.04/minispec/synth:/afs/athena.mit.edu/course/6/6.004/yosys/bin:/data/sanchez/tools/nsamar/18.04/minispec"
-
-PROMPT='%m:%C> '
+# export PATH="/data/sanchez/tools/bluespec/$DISTRO/bsc-latest/bin:/usr/local/csail/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/afs/athena.mit.edu/course/6/6.004/yosys/bin:/snap/bin:/data/sanchez/tools/qmn/18.04/bsc-vagrant/bin:/data/sanchez/tools/nsamar/18.04/minispec/synth:/afs/athena.mit.edu/course/6/6.004/yosys/bin:/data/sanchez/tools/nsamar/18.04/minispec:/data/sanchez/tools/qmn/18.04/bsc-vagrant/bin:/data/sanchez/tools/nsamar/18.04:/data/sanchez/tools/qmn/18.04/bsc-vagrant/bin:/data/sanchez/tools/nsamar/18.04/minispec/synth:/afs/athena.mit.edu/course/6/6.004/yosys/bin:/data/sanchez/tools/nsamar/18.04/minispec"
 
 export PATH="$HOME/bin:/usr/local/bin:$PATH:/usr/go/bin"
 
 # source /data/sanchez/tools/gcc-8.2/paths.sh
-source /data/sanchez/tools/nsamar/18.04/paths-vagrant.sh
+# source /data/sanchez/tools/nsamar/18.04/paths-vagrant.sh
 
+alias cda="cd /data/scratch/nsamar/asplos23_fhe"
 alias cdj="cd /data/scratch/nsamar/janncy"
 alias cdi="cd /data/sanchez/users/nsamar/isca22_fhe"
 alias cdz="cd /data/sanchez/users/nsamar/"
@@ -134,22 +134,31 @@ source /afs/csail.mit.edu/system/common/etc/zsh/zprofile.csail
 
 # Move GOPATH outside of AFS $HOME hell AND NFS filelock hell
 export GOPATH=/scratch/nsamar/go
+export GOCACHE=/scratch/nsamar/.cache
 # export XDG_CACHE_HOME=$HOME/.cache
 
 export PATH="/data/scratch/nsamar/.local/bin:$PATH"
 alias l="ssh nsamardzic@txe1-login.mit.edu"
+alias server="python3 -m http.server 1389"
 
-source /data/sanchez/tools/janncy/jenv/bin/activate
-
-if [ -n "$VIRTUAL_ENV" ]; then
-    source "$VIRTUAL_ENV/bin/activate"
-fi
+source /data/scratch/nsamar/jenv-nsamar/bin/activate
 
 HISTSIZE=1000
 HISTFILESIZE=2000
 
 cdz
 
+export PATH=/data/sanchez/tools/bluespec/ubuntu2004/bsc-latest/lib/Libraries/:/data/sanchez/tools/minispec:/data/sanchez/tools/bluespec/ubuntu2004/bsc-latest/bin/:$PATH
+
+# Xilinx tools setup
+# Only uncomment when using Xilinx tools
+# source /data/sanchez/tools/xilinx/ubuntu1804/vitis-2022.1/Vitis/2022.1/settings64.sh
+# source /opt/xilinx/xrt/setup.zsh
+# export PATH=/data/sanchez/tools/riscv/xpack-riscv-none-embed-gcc-10.1.0-1.1/bin:$PATH
+# source /data/sanchez/tools/verilator-4.104/paths.sh
+
 set -o vi
 export EDITOR=nvim
 bindkey '       ' autosuggest-accept
+bindkey '^r' history-incremental-search-backward
+
